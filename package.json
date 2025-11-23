@@ -1,0 +1,105 @@
+{
+  "name": "iconshub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/lib/index.cjs",
+  "module": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lib/index.js",
+      "require": "./dist/lib/index.cjs",
+      "types": "./dist/lib/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react/index.js",
+      "require": "./dist/react/index.cjs",
+      "types": "./dist/react/index.d.ts"
+    },
+    "./icons/*": {
+      "import": "./dist/lib/icons/*.js",
+      "require": "./dist/lib/icons/*.cjs",
+      "types": "./dist/lib/icons/*.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "icons",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "iconshub": "dist/cli/index.js"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite build --watch",
+    "clean": "rimraf dist",
+    "build:lib": "tsc -b tsconfig.lib.json",
+    "build:rollup": "rollup -c",
+    "build": "npm run clean && tsc -b tsconfig.build.json && npm run build:rollup",
+    "build:react": "tsc -b tsconfig.react.json",
+    "build:cli": "tsc -b tsconfig.cli.json",
+    "generate": "node scripts/generate-icons.js",
+    "prepare": "npm run build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "publish:dry": "npm publish --dry-run",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frontedninjas/iconshub.git"
+  },
+  "keywords": [
+    "icons",
+    "svg-icons",
+    "react-icons",
+    "vite-icons",
+    "icon library",
+    "iconforge",
+    "svg",
+    "cdn",
+    "open source",
+    "npm"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@svgr/core": "^8.1.0",
+    "@types/node": "^20.19.25",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "rimraf": "^5.0.10",
+    "rollup": "^4.53.3",
+    "svgo": "^3.3.2",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vitepress": "^2.0.0-alpha.15"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "author": "SUMANGAL KARAN",
+  "authorEmail": "sumangalkaran44@gmail.com",
+  "contributors": [
+    {
+      "name": "SUMANGAL KARAN",
+      "email": "sumangalkaran44@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Frontedninjas/iconshub/issues"
+  },
+  "homepage": "https://github.com/Frontedninjas/iconshub#readme"
+}

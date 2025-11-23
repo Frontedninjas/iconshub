@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist/react",
+    "rootDir": "src/react",
+    "target": "ES2020",
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/react/**/*"],
+  "exclude": ["node_modules"]
+}

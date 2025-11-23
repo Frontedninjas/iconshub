@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "docs/.vitepress/dist",
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": false,
+    "types": ["vite/client"]
+  },
+  "include": [
+    "docs/**/*.ts",
+    "docs/**/*.tsx",
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
+}

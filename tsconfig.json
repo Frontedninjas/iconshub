@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.lib.json" },
+    { "path": "./tsconfig.react.json" },
+    { "path": "./tsconfig.cli.json" },
+    { "path": "./tsconfig.docs.json" },
+    { "path": "./tsconfig.build.json" }
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
