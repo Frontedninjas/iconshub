@@ -58,8 +58,11 @@ for (const file of icons) {
   // Vue
   fs.writeFileSync(`${vueDir}/${name}.vue`, `<template>${optimized}</template>`);
 
-  // Svelte
-  fs.writeFileSync(`${svelteDir}/${name}.svelte`, `<script>export let size = 24;</script>\\n${optimized}`);
+  // Svelte — bind `width` and `height` to `size` prop
+  // Insert `width={size} height={size}` into the <svg> start tag.
+  const svelteSvg = optimized.replace(/^<svg\b/, '<svg width={size} height={size}');
+  const svelteContent = `<script>export let size = 24;</script>\n${svelteSvg}`;
+  fs.writeFileSync(`${svelteDir}/${name}.svelte`, svelteContent);
 
   // Raw (SVG string)
   fs.writeFileSync(`${rawDir}/${name}.js`, `export default ${JSON.stringify(optimized)}`);
